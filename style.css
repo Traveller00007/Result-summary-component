@@ -1,0 +1,231 @@
+:root {
+
+  /* width */
+  --Mobile: 375px;
+  --Desktop: 1440px;
+
+  /* primary color */
+  --LightRed: hsl(0, 100%, 67%);
+  --OrangeyYellow: hsl(39, 100%, 56%);
+  --GreenTeal: hsl(166, 100%, 37%);
+  --CobaltBlue: hsl(234, 85%, 45%);
+
+  /* gradient color */
+  --LightSlateBlue: hsl(252, 100%, 67%);
+  --LightRoyalBlue: hsl(241, 81%, 54%);
+  --VioletBlue: hsla(256, 72%, 46%, 1);
+  --PersianBlue: hsla(241, 72%, 46%, 0);
+
+  /* Neutral color */
+  --White: hsl(0, 0%, 100%);
+  --PaleBlue: hsl(221, 100%, 96%);
+  --LightLavender: hsl(241, 100%, 89%);
+  --DarkGrayBlue: hsl(224, 30%, 27%);
+
+  /* font */
+  --Font: 'Hanken Grotesk', sans-serif;
+
+  /* font size */
+  --title-fs: 2.5rem;
+}
+
+html {
+  font-size: 62.5%;
+  /*Converting 16px into 10px for easy calculation*/
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: var(--Font);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--PaleBlue);
+}
+
+.card {
+  max-width: 700px;
+  width: auto;
+  display: flex;
+  border-radius: 2rem;
+  background-color: var(--White);
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+}
+
+/* css for result section */
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  padding-bottom: 5rem;
+  background: linear-gradient(to bottom, var(--LightSlateBlue), var(--LightRoyalBlue));
+  border-radius: 2rem;
+  flex-basis: 50%;
+}
+
+.result__title {
+  font-size: var(--title-fs);
+  color: var(--LightLavender);
+}
+
+.result__subtitle {
+  text-align: center;
+  color: var(--White);
+  font-size: var(--title-fs);
+}
+
+.result__text {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--LightLavender);
+}
+
+.score {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, var(--VioletBlue), var(--PersianBlue));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score__number {
+  font-size: 6rem;
+  text-align: center;
+  color: var(--White);
+}
+
+.score__over100 {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--LightLavender);
+}
+
+/* css for summary section */
+.summary__title {
+  font-size: var(--title-fs);
+  color: var(--DarkGrayBlue);
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 50%;
+  row-gap: 2rem;
+  padding: 4rem;
+}
+
+.summary__card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.topic {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.summary__card--red {
+  background-color: hsla(0, 100%, 67%, .1);
+}
+
+.summary__card--yellow {
+  background-color: hsla(39, 100%, 56%, .1);
+}
+
+.summary__card--green {
+  background-color: hsla(166, 100%, 37%, .1);
+}
+
+.summary__card--blue {
+  background-color: hsla(234, 85%, 45%, .1);
+}
+
+
+.summary__heading--red,
+.summary__heading--yellow,
+.summary__heading--green,
+.summary__heading--blue {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.summary__heading--red {
+  color: var(--LightRed);
+}
+
+.summary__heading--yellow {
+  color: var(--OrangeyYellow);
+}
+
+.summary__heading--green {
+  color: var(--GreenTeal);
+}
+
+.summary__heading--blue {
+  color: var(--CobaltBlue);
+}
+
+.summary__score {
+  font-weight: 700;
+  color: var(--DarkGrayBlue);
+}
+
+.summary__over100 {
+  color: hsla(224, 30%, 27%, .5);
+}
+
+.summary__button {
+  color: var(--White);
+  background-color: var(--DarkGrayBlue);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  border-radius: 4rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+.summary__button:hover {
+  background: linear-gradient(to bottom, var(--LightSlateBlue), var(--LightRoyalBlue));
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .result, .summary{
+    row-gap: 2rem;
+    border-radius: 0 0 4rem 4rem;
+  }
+
+}
